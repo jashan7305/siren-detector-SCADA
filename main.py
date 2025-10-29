@@ -12,7 +12,7 @@ app = Flask(__name__)
 def main():
     wav_file_name = request.files["audio"]
     predicted_class = predict(file_name=wav_file_name, class_names=class_names)
-    print(predicted_class)
+    # print(predicted_class)
     if predicted_class.lower() == "alarm":
         is_siren = {"is_siren": True}
     elif "siren" in predicted_class.lower():
@@ -20,7 +20,7 @@ def main():
     else:
         is_siren = {"is_siren": False}
     res = jsonify(is_siren)
-    print(res)
+    # print(res)
     return res
 
 if __name__ == "__main__":

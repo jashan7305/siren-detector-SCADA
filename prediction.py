@@ -37,9 +37,8 @@ def predict(file_name, class_names):
 
     waveform = wav_data / tf.int16.max
   
-    scores, embeddings, spectrogram = model(waveform)
+    scores, _, _ = model(waveform)
     scores_np = scores.numpy()
-    spectrogram_np = spectrogram.numpy()
     infered_class = class_names[scores_np.mean(axis=0).argmax()]
-    print(f'The main sound is: {infered_class}')
+    # print(f'The main sound is: {infered_class}')
     return infered_class
