@@ -23,6 +23,7 @@ def main():
     else:
         is_siren = {"is_siren": False}
     res = jsonify(is_siren)
+    # print(is_siren)
     # print(res)
     return res
 
